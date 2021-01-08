@@ -13,4 +13,8 @@ app = Flask(__name__)
 def home():
     return "Hello World"
 
+@app.route("/<name>")
+def profile(name):
+    return f"<h1>Welcome! {name}!</h1>"
+
 app.run()
