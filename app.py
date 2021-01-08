@@ -2,7 +2,7 @@
 # 2-Routing with wildcard
 # 3-Templates
 # 4-Static files
-# 5-Display variables on html
+# 5-Display variables on templates
 # 6-If else in html
 
 from flask import Flask, render_template
@@ -15,6 +15,6 @@ def home():
 
 @app.route("/<name>")
 def profile(name):
-    return f"<h1>Welcome! {name}!</h1>"
+    return render_template("profile.html", name=name)
 
 app.run()
