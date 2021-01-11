@@ -1,0 +1,5 @@
+<ol>
+	{% for todo in todos %}
+		<li><a href="{{ url_for('todo', todo_id=todo.id) }}">{{ todo.task }}</a></li>
+	{% endfor %}
+</ol>

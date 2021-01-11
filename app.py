@@ -7,6 +7,7 @@
 # 13-Data validation
 
 from flask import Flask, render_template, request
+from models import *
 
 app = Flask(__name__)
 
@@ -28,6 +29,22 @@ def see_form():
 
 @app.route("/receive", methods=["POST"])
 def accept_form():
-    return f"{request.form['task']}"
+    task = request.form['task']
+    todo = Todo(task=task)
+    if todo.save():
+        return "Todo saved"
+    else:
+        return "Error"
 
-app.run()
+@app.route("/todos")
+def todos():
+    todos = Todo.select()
+    return render_template("todos.html", todos=todos)
+
+@app.route("/todo/<todo_id>")
+def todo(todo_id):
+    todo = Todo.get_by_id(todo_id)
+    return render_template("todo.html", todo=todo)
+
+if __name__ == "__main__":
+    app.run()
