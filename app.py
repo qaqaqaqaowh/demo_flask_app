@@ -1,9 +1,10 @@
-# 1-Basic flask app
-# 2-Routing with wildcard
-# 3-Templates
-# 4-Static files
-# 5-Display variables on templates
-# 6-If else in templates
+# 7-ENV variables
+# 8-Hot reload
+# 9-Template inheritance
+# 10-URL helper
+# 11-Forms
+# 12-Adding database
+# 13-Data validation
 
 from flask import Flask, render_template
 
