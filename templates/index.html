@@ -2,5 +2,8 @@
 {% block content %}
 	<h1>Hello World</h1>
 	<h2>My name is Nicholas!</h2>
-	<img src="static/face.gif">
+	<img src="/static/face.gif">
+	<a href="{{ url_for('profile', name='Nicholas') }}">Nicholas</a>
+	<a href="/Sandra">Sandra</a>
+	<a href="{{ url_for('special') }}">Special</a>
 {% endblock %}

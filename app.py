@@ -14,8 +14,12 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-@app.route("/<name>")
+@app.route("/profile/<name>")
 def profile(name): 
     return render_template("profile.html", name=name)
+
+@app.route("/Hello_world")
+def special():
+    return "<h1>This is a special page</h1>"
 
 app.run()
