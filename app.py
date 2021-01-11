@@ -34,7 +34,7 @@ def accept_form():
     if todo.save():
         return "Todo saved"
     else:
-        return "Error"
+        return ",".join(todo.errors)
 
 @app.route("/todos")
 def todos():
