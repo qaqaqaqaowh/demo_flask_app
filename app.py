@@ -6,7 +6,7 @@
 # 12-Adding database
 # 13-Data validation
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -21,5 +21,13 @@ def profile(name):
 @app.route("/Hello_world")
 def special():
     return "<h1>This is a special page</h1>"
+
+@app.route("/form")
+def see_form():
+    return render_template("form.html")
+
+@app.route("/receive", methods=["POST"])
+def accept_form():
+    return f"{request.form['task']}"
 
 app.run()
